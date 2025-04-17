@@ -1,12 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Header from "@/components/header/header";
+import CardSection from "@/components/card/cardSection";
 
-// import Navigation from "@/components/navigation/navigation";
-
-export default function Home() {
+export default function MainPage() {
   return (
     <>
-      <h1 className='text-3xl'>Homelalalaal</h1>
+      <Header />
+      <div>
+        <CardSection />
+      </div>
     </>
   );
 }
