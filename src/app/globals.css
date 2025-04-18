@@ -7,10 +7,17 @@
 
 
 
-/* * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-} */
+a:link {color:#369; text-decoration:none; };
+a:visited {color:#369; text-decoration:none; };
+a:hover {color:#69c; text-decoration:underline; };
+a:active {color:#69c; text-decoration:underline; };
 
+header a:link {color:#fff;};
+header a:visited {color:#fff;};
+header a:hover {color:#69c;};
+header a:active {color:#69c;};
 
+footer a:link {color:#69c;};
+footer a:visited {color:#69c;};
+footer a:hover {color:#fff;};
+footer a:active {color:#fff;};
