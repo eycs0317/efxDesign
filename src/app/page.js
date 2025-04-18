@@ -1,7 +1,7 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Header from "@/components/header/header";
-import CardSection from "@/components/card/cardSection";
+import Image from 'next/image';
+import styles from './page.module.css';
+import Header from '@/ui/header/header';
+import CardSection from '@/ui/card/cardSection';
 
 export default function MainPage() {
   return (
