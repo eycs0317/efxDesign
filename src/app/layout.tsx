@@ -2,7 +2,7 @@ const BRAND_COLOR_OPTIONS = ['blue', 'green', 'orange'];
 const BRAND_COLOR = BRAND_COLOR_OPTIONS[Math.floor(Math.random() * BRAND_COLOR_OPTIONS.length)];
 
 import './globals.css';
-import Navigation from '@/ui/navigation/navigation';
+import Header from '../ui/layout/header';
 export const metadata = {
   title: {
     template: '%s | efx design',
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navigation />
+        <Header />
         {children}
       </body>
     </html>
