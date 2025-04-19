@@ -1,16 +1,16 @@
+// nextjs
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
+// data
+import {getLogo} from '../../data/static/layout';
+
 export default function Logo({brand}) {
   const router = useRouter();
   const isHomePage = router.pathname === '/';
-  const logo = {
-    width: 160,
-    height: 41,
-    alt: 'efx design logo',
-    src: '/assets/i/brand/logo_' + brand + '.svg',
-  };
+
+  const logo = getLogo({brand});
 
   return (
     <>

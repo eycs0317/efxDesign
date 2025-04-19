@@ -1,10 +1,15 @@
+// nextjs
 import Link from 'next/link';
 
+// data
+import {getCopyright} from '../../data/static/layout';
+
 export default function Footer() {
-  const today = new Date();
+  const footer = getCopyright();
+
   return (
     <footer role="contentinfo" className="bg-gray-800 text-white">
-      <small>&copy;{today.getFullYear()} <Link href="/">efx design</Link>. All rights reserved.</small>
+      <small>&copy;{footer.year} <Link href="/">{footer.entity}</Link>. {footer.legal}</small>
     </footer>
   );
 }

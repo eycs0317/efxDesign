@@ -1,7 +1,11 @@
+// brand
 const BRAND_COLOR_OPTIONS = ['blue', 'green', 'orange'];
 const BRAND_COLOR = BRAND_COLOR_OPTIONS[Math.floor(Math.random() * BRAND_COLOR_OPTIONS.length)];
 
+// styles
 import './globals.css';
+
+// metadata
 export const metadata = {
   title: {
     template: '%s | efx design',
@@ -13,6 +17,7 @@ export const metadata = {
   },
 };
 
+// ui
 import Header from '../ui/layout/header';
 import Footer from '../ui/layout/footer';
 

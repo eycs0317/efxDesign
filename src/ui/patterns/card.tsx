@@ -1,4 +1,6 @@
+// nextjs
 import Image from 'next/image';
+
 export default function Card({cardData}) {
   return (
     <section className="">
