@@ -1,16 +1,16 @@
+// nextjs
 import Link from 'next/link';
 import Image from 'next/image';
 
+// data
+import {getGlobalNav} from '../../data/static/layout';
+
 export default function Navigation() {
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
-  ];
+  const globalNav = getGlobalNav();
+
   return (
     <ul className="flex gap-6">
-      {navItems.map((item) => (
+      {globalNav.map((item) => (
         <li key={item.name}>
           <Link href={item.href}>{item.name}</Link>
         </li>

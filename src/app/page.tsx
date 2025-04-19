@@ -1,20 +1,24 @@
-import Image from 'next/image';
+// styles
 import styles from './page.module.css';
+
+// nextjs
+import Image from 'next/image';
+
+// ui
+import CardSection from '../ui/patterns/cardSection';
 import Hero from '../ui/layout/hero';
-import CardSection from '../ui/card/cardSection';
+
+// data
+import {getServicesData} from '../data/static/cards';
 
 export default function MainPage() {
-  const cardsData = [
-    { title: 'Customer Website Design', image: '/assets/i/icons/image1.png', description: 'We create visually appealing and user-friendly websites that help your Business stand out in the digital world' },
-    { title: 'Customer Website Design', image: '/assets/i/icons/image2.png', description: 'We create visually appealing and user-friendly websites that help your Business stand out in the digital world' },
-    { title: 'Customer Website Design', image: '/assets/i/icons/image3.png', description: 'We create visually appealing and user-friendly websites that help your Business stand out in the digital world' },
-  ];
+  const servicesData = getServicesData();
 
   return (
     <>
       <Hero />
       <div>
-        <CardSection title="Our Services" cardsData={cardsData} />
+        <CardSection title="Our Services" cardsData={servicesData} />
       </div>
     </>
   );

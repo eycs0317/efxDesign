@@ -1,9 +1,8 @@
+// data
+import {getHeroHome} from '../../data/static/layout';
+
 export default function Header() {
-  const hero = {
-    heading: 'Crafting Modern Websites for your Business',
-    subheading: 'We create visually appealing and user-friendly websites that help your Business stand out in the digital world',
-    cta: 'Get Started',
-  };
+  const hero = getHeroHome();
 
   return (
     <div className="flex flex-col bg-gray-800 text-white items-center p-10 justify-center gap-6">

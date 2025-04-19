@@ -1,3 +1,4 @@
+// metadata
 export const metadata = {
   title: 'Contact us',
 }
