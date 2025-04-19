@@ -9,7 +9,7 @@ export const metadata = {
   },
   description: 'efx design specializes in modern, high-converting websites for brands ready to scale. Strategic design, UX, and clean development—all in one studio.',
   icons: {
-    icon: '/assets/i/brand/favicon_' + BRAND_COLOR + '.ico?' + Date.now(),
+    icon: '/assets/i/brand/favicon_' + BRAND_COLOR + '.ico',
   },
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
+        <Header brand={BRAND_COLOR} />
         {children}
         <Footer />
       </body>
