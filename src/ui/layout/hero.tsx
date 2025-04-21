@@ -4,6 +4,8 @@ import Heading from '../patterns/heading';
 // data
 import {getHeroHome} from '../../data/static/layout';
 
+import Link from 'next/link';
+
 export default function Header() {
   const hero = getHeroHome();
 
@@ -12,7 +14,9 @@ export default function Header() {
       <div className="max-w-7xl flex flex-col items-center gap-8">
         <Heading level={1} content={hero.heading} />
         <p className="text-2xl">{hero.subheading}</p>
-        <button className="bg-white text-black py-3 px-5 rounded-md hover:bg-gray-200">{hero.cta}</button>
+        <Link href='/api/auth/signin'>
+          <button className="bg-white text-black py-3 px-5 rounded-md hover:bg-gray-200">{hero.cta}</button>
+        </Link>
       </div>
     </div>
   );
