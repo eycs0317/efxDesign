@@ -2,18 +2,11 @@
 import Logo from './logo';
 import Navigation from './navigation';
 
-import getConfig from 'next/config';
-
 export default function Header() {
-  const { publicRuntimeConfig } = getConfig();
   return (
-    <header role="banner" className="bg-gray-800 text-white">
-      <div className="p-10">
-        <div className="flex justify-between items-center">
-          <Logo />
-          <Navigation />
-        </div>
-      </div>
+    <header role="banner" className="bg-primary-1000 p-(--padding-container) flex justify-between items-center">
+        <Logo />
+        <Navigation />
     </header>
   );
 }
