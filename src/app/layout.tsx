@@ -1,7 +1,3 @@
-// brand
-const BRAND_COLOR_OPTIONS = ['blue', 'green', 'orange'];
-const BRAND_COLOR = BRAND_COLOR_OPTIONS[Math.floor(Math.random() * BRAND_COLOR_OPTIONS.length)];
-
 // styles
 import './globals.css';
 
@@ -13,7 +9,18 @@ export const metadata = {
   },
   description: 'efx design specializes in modern, high-converting websites for brands ready to scale. Strategic design, UX, and clean development—all in one studio.',
   icons: {
-    icon: '/assets/i/brand/favicon_' + BRAND_COLOR + '.ico',
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/assets/i/brand/favicon_light.ico',
+        href: '/assets/i/brand/favicon_light.svg',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/assets/i/brand/favicon_dark.ico',
+        href: '/assets/i/brand/favicon_dark.svg',
+      },
+    ],
   },
 };
 
@@ -25,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header brand={BRAND_COLOR} />
+        <Header />
         {children}
         <Footer />
       </body>

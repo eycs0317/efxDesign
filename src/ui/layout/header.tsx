@@ -1,15 +1,16 @@
-'use client';
-
 // ui
 import Logo from './logo';
 import Navigation from './navigation';
 
-export default function Header({brand}) {
+import getConfig from 'next/config';
+
+export default function Header() {
+  const { publicRuntimeConfig } = getConfig();
   return (
     <header role="banner" className="bg-gray-800 text-white">
       <div className="p-10">
         <div className="flex justify-between items-center">
-          <Logo brand={brand}/>
+          <Logo />
           <Navigation />
         </div>
       </div>
