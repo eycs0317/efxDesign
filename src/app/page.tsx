@@ -5,21 +5,23 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 // ui
-import CardSection from '../ui/patterns/cardSection';
+import ContainerGroup from '../ui/patterns/containerGroup';
 import Hero from '../ui/layout/hero';
 
 // data
-import {getServicesData} from '../data/static/cards';
+import {getServicesData, getPitchData} from '../data/static/container';
 
 export default function MainPage() {
   const servicesData = getServicesData();
+  const pitchData = getPitchData();
 
   return (
-    <>
+    <main role="main">
       <Hero />
-      <div>
-        <CardSection title="Our Services" cardsData={servicesData} />
+      <div className="grid justify-items-center">
+        <ContainerGroup title="Our Services" containersData={servicesData} />
+        <ContainerGroup title="Why Choose Us?" containersData={pitchData} size="max-w-5xl" />
       </div>
-    </>
+    </main>
   );
 }
