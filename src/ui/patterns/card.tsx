@@ -7,7 +7,7 @@ import Heading from '../patterns/heading';
 export default function Card({cardData}) {
   return (
     <section className="">
-      <Image src={cardData.image} alt={cardData.title} width={100} height={200} />
+      <Image src={cardData.image} alt={cardData.title} width={60} height={60} />
       <Heading level={3} content={cardData.title} />
       <p>{cardData.description}</p>
     </section>

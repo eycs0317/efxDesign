@@ -24,9 +24,9 @@ export default function Logo() {
   return (
     <>
       {isHomePage ? (
-        <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} />
+        <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} priority={true} />
       ) : (
-        <Link href="/"><Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} /></Link>
+        <Link href="/"><Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} priority={true} /></Link>
       )}
     </>
   );

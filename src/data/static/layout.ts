@@ -1,7 +1,7 @@
 export function getLogo(brand_color) {
   return {
     width: 160,
-    height: 41,
+    height: 36,
     alt: 'efx design logo',
     src: '/assets/i/brand/logo_' + brand_color + '.svg',
   };
