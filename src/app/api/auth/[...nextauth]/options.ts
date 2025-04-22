@@ -1,7 +1,8 @@
-import type {  Awaitable, NextAuthOptions, RequestInternal, User } from 'next-auth'
-import CredentialsProvider from "next-auth/providers/credentials"
+// nextjs
+import type { Awaitable, NextAuthOptions, RequestInternal, User } from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
 import GitHubProvider from 'next-auth/providers/github'
-import GoogleProvider from "next-auth/providers/google";
+import GoogleProvider from 'next-auth/providers/google';
 
 export const options: NextAuthOptions = {
   providers:[
@@ -23,7 +24,7 @@ export const options: NextAuthOptions = {
         // This is where you need to retrieve user data
         // to verify with credentials
         // Docs: https://next-auth.js.org/configuration/providers/credentials
-        const user = { id: "42", name: "Dave", password: "nextauth" }
+        const user = { id: '42', name: 'Dave', password: 'nextauth' }
 
         if (credentials?.username === user.name && credentials?.password === user.password) {
             return user
@@ -33,5 +34,7 @@ export const options: NextAuthOptions = {
     }
     })
   ],
-
+  // pages: {
+  //   signIn: '/about',
+  // },
 }
