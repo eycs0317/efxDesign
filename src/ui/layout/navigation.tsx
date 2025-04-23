@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// data
 import {getGlobalNav} from '../../data/static/layout';
+
 
 export default function Navigation() {
   const globalNav = getGlobalNav();
@@ -15,6 +15,8 @@ export default function Navigation() {
           <Link href={item.href}>{item.name}</Link>
         </li>
       ))}
+
+
     </ul>
   );
 }

@@ -1,4 +1,5 @@
 // ui
+import GoogleSignIn from '../../components/GoogleSignIn';
 import Logo from './logo';
 import Navigation from './navigation';
 
@@ -12,6 +13,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Logo />
           <Navigation />
+          {/* <GoogleSignIn /> */}
         </div>
       </div>
     </header>
