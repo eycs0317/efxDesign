@@ -1,4 +1,5 @@
 // ui
+import GoogleSignIn from '../../components/GoogleSignIn';
 import Logo from './logo';
 import Navigation from './navigation';
 

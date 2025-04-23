@@ -6,6 +6,7 @@ import {getHeroHome} from '../../data/static/layout';
 
 import Link from 'next/link';
 
+
 export default function Header() {
   const hero = getHeroHome();
 
