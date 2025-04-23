@@ -14,6 +14,7 @@ export function getGlobalNav() {
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
     { name: 'Sign In', href: '/signIn' },
+    { name: 'Sign Out', href: '/signOut' },
   ];
 }
 
