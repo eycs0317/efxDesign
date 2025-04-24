@@ -15,8 +15,6 @@ export default function Navigation() {
           <Link href={item.href} className="p-2">{item.name}</Link>
         </li>
       ))}
-
-
     </ul>
   );
 }

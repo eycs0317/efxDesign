@@ -19,8 +19,8 @@ export default function MainPage() {
     <main role="main">
       <Hero />
       <div className="grid justify-items-center">
-        <ContainerGroup title="Our Services" containersData={servicesData} />
-        <ContainerGroup title="Why Choose Us?" containersData={pitchData} size="max-w-5xl" />
+        <ContainerGroup containerGroupData={servicesData} />
+        <ContainerGroup containerGroupData={pitchData} />
       </div>
     </main>
   );
