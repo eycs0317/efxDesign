@@ -1,5 +1,9 @@
+// react
+import {Fragment} from 'react';
+
 // nextjs
 import Image from 'next/image';
+import Link from 'next/link';
 
 // ui
 import Heading from '../patterns/heading';
@@ -10,7 +14,7 @@ export default function Container({containerData}) {
   return (
     <section className={containerData.className}>
       {containerContent.map((containerContentData) => (
-        <div key={containerContentData.uid}>
+        <Fragment key={containerContentData.uid}>
           {(() => {
             switch (containerContentData.component) {
               case 'heading':
@@ -19,9 +23,11 @@ export default function Container({containerData}) {
                 return <Image src={containerContentData.data.src} alt={containerContentData.data.alt} width={containerContentData.data.width} height={containerContentData.data.height} />;
               case 'paragraph':
                 return <p>{containerContentData.data.content}</p>;
+              case 'link':
+                return <Link href={containerContentData.data.href} className={containerContentData.data.className}>{containerContentData.data.content}</Link>;
             }
           })()}
-        </div>
+        </Fragment>
       ))}
     </section>
   );
