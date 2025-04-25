@@ -1,3 +1,30 @@
+// Hero
+export function getHeroData() {
+  return {
+    className: 'bg-primary-1000 text-neutral-000',
+    heading: {
+      data: {
+        content: 'Crafting Modern Websites for your Business',
+        level: 1,
+      },
+    },
+    subheading: {
+      data: {
+        content: 'We create visually appealing and user-friendly websites that help your Business stand out in the digital world',
+        level: 2,
+        className: 'text-2xl',
+      },
+    },
+    footer: {
+      data: {
+        href: '/',
+        content: 'Get Started',
+        className: 'button',
+      },
+    },
+  };
+}
+
 // Our Services Section
 export function getWebsiteDesign(defaultConfig) {
   return {
@@ -204,7 +231,50 @@ export function getPitchData() {
 }
 
 // Our Philosophy Section
-export function getPhilosophy() {
+export function getPhilosophyContent() {
+  return {
+    className: 'flex-2',
+    uid: 'philosophy0',
+    content: [
+      {
+        uid: 'philosophy0a',
+        component: 'paragraph',
+        data: {
+          content: 'At EFX, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
+        },
+      }, {
+        uid: 'philosophy0b',
+        component: 'link',
+        data: {
+          href: '/about',
+          content: 'About EFX',
+          className: 'button primary inline-block mt-8',
+        },
+      },
+    ],
+  };
+}
+
+export function getPhilosophyPhoto() {
+  return {
+    className: 'flex-1 text-center',
+    uid: 'philosophy1',
+    content: [
+      {
+        uid: 'philosophy1a',
+        component: 'image',
+        data: {
+          src: '/assets/i/photos/studio.jpg',
+          alt: 'efx Studio',
+          width: 512,
+          height: 376,
+        },
+      },
+    ],
+  };
+}
+
+export function getPhilosophyData() {
   return {
     className: 'py-8 px-4 max-w-7xl',
     heading: {
@@ -216,27 +286,8 @@ export function getPhilosophy() {
     },
     containers: {
       data: [
-        {
-          className: 'flex-1 text-center',
-          uid: 'philosophy0',
-          content: [
-            {
-              uid: 'philosophy0a',
-              component: 'paragraph',
-              data: {
-                content: 'At efx design, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
-              },
-            }, {
-              uid: 'philosophy1a',
-              component: 'link',
-              data: {
-                href: '/about',
-                content: 'Learn more about efx design',
-                className: 'button primary inline-block mt-8',
-              },
-            },
-          ],
-        },
+        getPhilosophyContent(),
+        getPhilosophyPhoto(),
       ],
     },
   };
