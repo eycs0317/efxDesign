@@ -30,6 +30,19 @@ export function getAboutIntro() {
         data: {
           content: 'EFX Design is a web design studio dedicated to crafting digital experiences that elevate brands and move people. From clean, conversion-focused websites to seamless user interfaces, we believe great design starts with understanding—your brand, your audience, and your goals.',
         },
+      }, {
+        uid: 'about0b',
+        component: 'quote',
+        data: {
+          content: '"Design is more than how something looks—it’s how it works, how it feels, and how it moves people. At EFX Design, we believe great digital experiences are built at the intersection of clarity, creativity, and intent."',
+        },
+      },, {
+        uid: 'about0c',
+        component: 'paragraph',
+        data: {
+          content: '— Eddie Lou, Founder, EFX Design',
+          className: 'author',
+        },
       },
     ],
   };
@@ -56,7 +69,13 @@ export function getWhatWeDoContent() {
         uid: 'do0a',
         component: 'paragraph',
         data: {
-          content: 'We specialize in custom websites, UX/UI design, and e-commerce experiences that combine strategy, visual storytelling, and usability. Whether you\'re a growing startup, a creative agency, or an established brand looking for a refresh—we meet you where you are and help take your presence to the next level.',
+          content: 'At EFX Design, we help brands stand out and grow through strategic, beautifully-crafted digital experiences. Our work blends clean design, thoughtful UX, and modern development to build websites that don’t just look good—they work hard for your business.',
+        },
+      }, {
+        uid: 'do0b',
+        component: 'paragraph',
+        data: {
+          content: 'Whether you’re launching a new idea, refreshing your online presence, or scaling your e-commerce platform, we partner with you to bring clarity, creativity, and consistency to every step of the journey. Every project is a collaboration—and every solution is made with purpose.',
         },
       },
     ],
@@ -119,11 +138,9 @@ export function getPhilosophyContent() {
         },
       }, {
         uid: 'philosophy0b',
-        component: 'link',
+        component: 'paragraph',
         data: {
-          href: '/about',
-          content: 'About EFX',
-          className: 'button primary inline-block mt-8',
+          content: 'We care deeply about the details—because details are where trust is built, and brands are remembered. Whether we’re working with a solo founder or a growing team, we approach every project with craftsmanship, curiosity, and care.',
         },
       },
     ],
