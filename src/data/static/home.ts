@@ -125,7 +125,7 @@ export function getServicesData() {
       data: {
         href: '/services',
         content: 'Explore Services',
-        className: 'button primary py-3 px-5 rounded-md hover:bg-primary-500 inline-block',
+        className: 'button primary inline-block',
       },
     },
   };
@@ -224,7 +224,7 @@ export function getPhilosophy() {
               uid: 'philosophy0a',
               component: 'paragraph',
               data: {
-                content: 'At EFX Design, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
+                content: 'At efx design, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
               },
             }, {
               uid: 'philosophy1a',
@@ -232,7 +232,7 @@ export function getPhilosophy() {
               data: {
                 href: '/about',
                 content: 'Learn more about efx design',
-                className: 'button primary py-3 px-5 rounded-md hover:bg-primary-500 inline-block mt-8',
+                className: 'button primary inline-block mt-8',
               },
             },
           ],

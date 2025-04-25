@@ -9,7 +9,7 @@ import ContainerGroup from '../ui/patterns/containerGroup';
 import Hero from '../ui/layout/hero';
 
 // data
-import {getServicesData, getPitchData, getPhilosophy} from '../data/static/container';
+import {getServicesData, getPitchData, getPhilosophy} from '../data/static/home';
 
 export default function MainPage() {
   const servicesData = getServicesData();

@@ -15,7 +15,7 @@ export default function Header() {
       <div className="max-w-7xl flex flex-col items-center gap-8">
         <Heading level={1} content={hero.heading} />
         <p className="text-2xl">{hero.subheading}</p>
-        <Link href='/signIn' className="bg-white text-black py-3 px-5 rounded-md hover:bg-gray-200">{hero.cta}</Link>
+        <Link href='/signIn' className="button">{hero.cta}</Link>
       </div>
     </div>
   );
