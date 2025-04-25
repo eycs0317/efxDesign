@@ -240,14 +240,14 @@ export function getPhilosophyContent() {
         uid: 'philosophy0a',
         component: 'paragraph',
         data: {
-          content: 'At EFX, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
+          content: 'At EFX Design, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
         },
       }, {
         uid: 'philosophy0b',
         component: 'link',
         data: {
           href: '/about',
-          content: 'About EFX',
+          content: 'About EFX Design',
           className: 'button primary inline-block mt-8',
         },
       },
