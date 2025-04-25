@@ -7,7 +7,7 @@ import Heading from '../patterns/heading';
 export default function Header({heroData}) {
   return (
     <div className={heroData.className ? heroData.className + ' p-16 grid justify-items-center' : 'p-16 grid justify-items-center'}>
-      <section className="max-w-7xl flex flex-col items-center gap-8">
+      <section className="hero max-w-7xl flex flex-col items-center gap-8">
         <Heading level={heroData.heading.data.level} content={heroData.heading.data.content} className={heroData.heading.data.className} />
         {(() => {
           return (heroData.subheading) ? <Heading level={heroData.subheading.data.level} content={heroData.subheading.data.content} className={heroData.subheading.data.className} /> : '';

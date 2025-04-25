@@ -4,13 +4,13 @@ export function getHeroData() {
     className: 'bg-primary-1000 text-neutral-000',
     heading: {
       data: {
-        content: 'About EFX Design',
+        content: 'What We Do',
         level: 1,
       },
     },
     subheading: {
       data: {
-        content: 'We design with purpose. We build with intent, crafting websites that are as strategic as they are beautiful.',
+        content: 'At EFX Design, we craft digital experiences that are as thoughtful as they are beautiful. From concept to launch, our services are built around strategy, design, and usability.  Helping you connect with your audience and grow with intention.',
         level: 2,
         className: 'text-2xl',
       },

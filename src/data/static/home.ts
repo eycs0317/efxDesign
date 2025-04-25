@@ -52,7 +52,7 @@ export function getWebsiteDesign(defaultConfig) {
         uid: 'services0c',
         component: 'paragraph',
         data: {
-          content: 'We craft custom websites that are as strategic as they are stunning—designed to reflect your brand, engage your audience, and drive meaningful results across every screen.',
+          content: 'We craft custom websites that are as strategic as they are stunning, designed to reflect your brand, engage your audience, and drive meaningful results across every screen.',
         },
       },
     ],
@@ -200,7 +200,7 @@ export function getClientCentric(defaultConfig) {
         uid: 'pitch1b',
         component: 'paragraph',
         data: {
-          content: 'We treat every project like a partnership. From kickoff to launch, we collaborate closely, communicate clearly, and adapt to your needs—so the final product not only meets expectations, but exceeds them.',
+          content: 'We treat every project like a partnership. From kickoff to launch, we collaborate closely, communicate clearly, and adapt to your needs so the final product not only meets expectations, but exceeds them.',
         },
       },
     ],
@@ -240,7 +240,7 @@ export function getPhilosophyContent() {
         uid: 'philosophy0a',
         component: 'paragraph',
         data: {
-          content: 'At EFX Design, we believe great design is more than aesthetics—it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
+          content: 'At EFX Design, we believe great design is more than aesthetics, it’s about purpose, clarity, and experience. Every pixel, every interaction, and every decision is made with intention. We collaborate closely with our clients, blending creative thinking with technical precision to build digital experiences that feel as good as they look. Clean, thoughtful, and always built to perform.',
         },
       }, {
         uid: 'philosophy0b',
