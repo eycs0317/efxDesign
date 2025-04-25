@@ -77,6 +77,10 @@
   --color-link-light-active: var(--color-primary-500);
   --color-link-dark: var(--color-primary-500);
   --color-link-dark-active: var(--color-neutral-000);
+  --color-button-bg-primary: var(--color-primary-800);
+  --color-button-bg-primary-active: var(--color-primary-600);
+  --color-button-text-primary: var(--color-neutral-000);
+  --color-button-text-primary-active: var(--color-neutral-1000);
   --color-nav: var(--color-neutral-000);
   --color-nav-active: var(--color-primary-500);
 
@@ -87,6 +91,10 @@ a:link { color:var(--color-link-light); text-decoration:none; };
 a:visited { color:var(--color-link-light); text-decoration:none; };
 a:hover { color:var(--color-link-light-active); text-decoration:underline; };
 a:active { color:var(--color-link-light-active); text-decoration:underline; };
+a.button.primary:link { background-color:var(--color-button-bg-primary); color:var(--color-button-text-primary); text-decoration:none; };
+a.button.primary:visited { background-color:var(--color-button-bg-primary); color:var(--color-button-text-primary); text-decoration:none; };
+a.button.primary:hover { background-color:var(--color-button-bg-primary-active); color:var(--color-button-text-primary-active); text-decoration:underline; };
+a.button.primary:active { background-color:var(--color-button-bg-primary-active); color:var(--color-button-text-primary-active); text-decoration:underline; };
 
 header a:link { color:var(--color-nav); };
 header a:visited { color:var(--color-nav); };
