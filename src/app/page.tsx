@@ -9,16 +9,17 @@ import ContainerGroup from '../ui/patterns/containerGroup';
 import Hero from '../ui/layout/hero';
 
 // data
-import {getServicesData, getPitchData, getPhilosophy} from '../data/static/home';
+import {getHeroData, getServicesData, getPitchData, getPhilosophyData} from '../data/static/home';
 
 export default function MainPage() {
+  const heroData = getHeroData();
   const servicesData = getServicesData();
   const pitchData = getPitchData();
-  const philosophyData = getPhilosophy();
+  const philosophyData = getPhilosophyData();
 
   return (
     <main role="main">
-      <Hero />
+      <Hero heroData={heroData} />
       <div className="bg-neutral-100 grid justify-items-center">
         <ContainerGroup containerGroupData={servicesData} />
       </div>

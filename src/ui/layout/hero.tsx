@@ -1,22 +1,26 @@
+// nextjs
+import Link from 'next/link';
+
 // ui
 import Heading from '../patterns/heading';
 
-// data
-import {getHeroHome} from '../../data/static/layout';
-
-import Link from 'next/link';
-
-
-export default function Header() {
-  const hero = getHeroHome();
-
+export default function Header({heroData}) {
   return (
-    <div className="bg-primary-1000 text-neutral-000 p-16 grid justify-items-center">
-      <div className="max-w-7xl flex flex-col items-center gap-8">
-        <Heading level={1} content={hero.heading} />
-        <p className="text-2xl">{hero.subheading}</p>
-        <Link href='/signIn' className="button">{hero.cta}</Link>
-      </div>
+    <div className={heroData.className ? heroData.className + ' p-16 grid justify-items-center' : 'p-16 grid justify-items-center'}>
+      <section className="max-w-7xl flex flex-col items-center gap-8">
+        <Heading level={heroData.heading.data.level} content={heroData.heading.data.content} className={heroData.heading.data.className} />
+        {(() => {
+          return (heroData.subheading) ? <Heading level={heroData.subheading.data.level} content={heroData.subheading.data.content} className={heroData.subheading.data.className} /> : '';
+        })()}
+
+        {(() => {
+          return (heroData.paragraph) ? <p className={heroData.paragraph.data.className}>{heroData.paragraph.data.content}</p> : '';
+        })()}
+        
+        {(() => {
+          return (heroData.footer) ? <Link href={heroData.footer.data.href} className={heroData.footer.data.className}>{heroData.footer.data.content}</Link> : '';
+        })()}
+      </section>
     </div>
   );
 }

@@ -27,11 +27,3 @@ export function getCopyright() {
     legal: 'All rights reserved.',
   };
 }
-
-export function getHeroHome() {
-  return {
-    heading: 'Crafting Modern Websites for your Business',
-    subheading: 'We create visually appealing and user-friendly websites that help your Business stand out in the digital world',
-    cta: 'Get Started',
-  };
-}
