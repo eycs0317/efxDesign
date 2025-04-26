@@ -14,33 +14,25 @@ import ContainerGroup from '../../ui/patterns/containerGroup';
 import Hero from '../../ui/layout/hero';
 
 // data
-import {getHeroData, getAboutData, getWhatWeDoData, getPhilosophyData, getHowWeWorkData, getWhoWeWorkWithData, getCTAData} from '../../data/static/services';
+import {getHeroData, getWebDesignData, getUXDesignData, getECommerceData, getBrandData, getDesignSystemsData} from '../../data/static/services';
 
 export default function MainPage() {
   const heroData = getHeroData();
-  const aboutData = getAboutData();
-  const whatWeDoData = getWhatWeDoData();
-  const philosophyData = getPhilosophyData();
-  const howWeWorkData = getHowWeWorkData();
-  const whoWeWorkWithData = getWhoWeWorkWithData();
-  const ctaData = getCTAData();
+  const webDesignData = getWebDesignData();
+  const uxDesignData = getUXDesignData();
+  const eCommerceData = getECommerceData();
+  const brandData = getBrandData();
+  const designSystemsData = getDesignSystemsData();
 
   return (
     <main role="main">
       <Hero heroData={heroData} />
-      <div className="bg-neutral-100 grid justify-items-center">
-        <ContainerGroup containerGroupData={aboutData} />
-      </div>
       <div className="grid justify-items-center">
-        <ContainerGroup containerGroupData={whatWeDoData} />
-        <ContainerGroup containerGroupData={philosophyData} />
-      </div>
-      <div className="bg-neutral-100 grid justify-items-center">
-        <ContainerGroup containerGroupData={howWeWorkData} />
-      </div>
-      <div className="grid justify-items-center">
-        <ContainerGroup containerGroupData={whoWeWorkWithData} />
-        <ContainerGroup containerGroupData={ctaData} />
+        <ContainerGroup containerGroupData={webDesignData} />
+        <ContainerGroup containerGroupData={uxDesignData} />
+        <ContainerGroup containerGroupData={eCommerceData} />
+        <ContainerGroup containerGroupData={brandData} />
+        <ContainerGroup containerGroupData={designSystemsData} />
       </div>
     </main>
   );

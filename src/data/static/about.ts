@@ -43,7 +43,7 @@ export function getAboutIntro() {
         data: {
           content: '"With a background in design and front-end engineering, I’ve seen how powerful the right blend of creativity and structure can be.  At EFX Design, we approach every project with the mindset of a designer and the precision of a developer because great digital experiences should be as functional as they are beautiful."',
         },
-      },, {
+      }, {
         uid: 'about0c',
         component: 'paragraph',
         data: {

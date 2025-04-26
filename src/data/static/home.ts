@@ -200,7 +200,7 @@ export function getClientCentric(defaultConfig) {
         uid: 'pitch1b',
         component: 'paragraph',
         data: {
-          content: 'We treat every project like a partnership. From kickoff to launch, we collaborate closely, communicate clearly, and adapt to your needs so the final product not only meets expectations, but exceeds them.',
+          content: 'We treat every project like a partnership. From kickoff to launch, we collaborate closely, communicate clearly, and adapt to your needs, so the final product not only meets expectations but exceeds them.',
         },
       },
     ],
