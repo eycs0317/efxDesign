@@ -1,7 +1,10 @@
+
+
 // metadata
 export const metadata = {
   title: 'About us',
 }
+import UserAvatar from '../actions/textSession';
 
 // styles
 import styles from './page.module.css';

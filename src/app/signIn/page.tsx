@@ -1,4 +1,4 @@
-import { signIn } from "../auth"
+import { signIn } from "../../../auth"
 import  GoogleSignIn  from "../../components/GoogleSignIn"
 export default function SignIn() {
   return (

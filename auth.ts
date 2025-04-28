@@ -1,9 +1,17 @@
 import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
 import Credentials from "next-auth/providers/credentials"
-import { saltAndHashPassword } from "./utils/password"
+import { saltAndHashPassword } from "./src/app/utils/password"
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [Google, Credentials({
+  providers: [Google({
+    authorization: {
+      params: {
+        prompt: "consent",
+        access_type: "offline",
+        response_type: "code",
+      },
+    },
+  }), Credentials({
     credentials: {
       email:{ label: "Email", type: "text"},
       password:{label: "Password", type: "password"},
