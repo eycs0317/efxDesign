@@ -9,12 +9,14 @@ export function getLogo(brand_color) {
 
 export function getGlobalNav() {
   return [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Sign In', href: '/signIn' },
-    { name: 'Sign Out', href: '/signOut' },
+    { name: 'Home', href: '/', signedIn: false, },
+    { name: 'About', href: '/about', signedIn: false, },
+    { name: 'Services', href: '/services', signedIn: false, },
+    { name: 'Contact', href: '/contact', signedIn: false, },
+    { name: 'Sign In', href: '/signIn', signedIn: false, },
+    { name: 'Dashboard', href: '/dashboard', signedIn: true, },
+    { name: 'Profile', href: '/profile', signedIn: true, },
+    { name: 'Sign Out', href: '/signOut', signedIn: true, },
   ];
 }
 

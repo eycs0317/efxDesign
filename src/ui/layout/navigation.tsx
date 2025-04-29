@@ -15,12 +15,11 @@ export default async function Navigation() {
   const session = await auth();
 
   return (
-  <>
     <ul className="flex gap-x-2">
       {globalNav.map((item) => (
         <Fragment key={item.name}>
           {(() => {
-            if ((session?.user && item.name == 'Sign In') || (!session?.user && item.name == 'Sign Out')) {
+            if ((session?.user && !item.signedIn) || (!session?.user && item.signedIn)) {
               return null;
             } else {
               return (
@@ -33,6 +32,5 @@ export default async function Navigation() {
         </Fragment>
       ))}
     </ul>
-    </>
   );
 }
