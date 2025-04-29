@@ -165,7 +165,7 @@ export function getECommercePhoto() {
         uid: 'ecommerce1a',
         component: 'image',
         data: {
-          src: '/assets/i/photos/user-research.jpg',
+          src: '/assets/i/photos/ecommerce-services.jpg',
           alt: 'efx Studio',
           width: 512,
           height: 376,
@@ -220,7 +220,7 @@ export function getBrandPhoto() {
         uid: 'brand1a',
         component: 'image',
         data: {
-          src: '/assets/i/photos/web-design.jpg',
+          src: '/assets/i/photos/brand-identity-services.jpg',
           alt: 'efx Studio',
           width: 512,
           height: 376,
@@ -279,7 +279,7 @@ export function getDesignSystemsPhoto() {
         uid: 'ds1a',
         component: 'image',
         data: {
-          src: '/assets/i/photos/user-research.jpg',
+          src: '/assets/i/photos/design-systems-services.png',
           alt: 'efx Studio',
           width: 512,
           height: 376,

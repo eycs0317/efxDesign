@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // data
-import {getLogo} from '../../data/static/layout';
+import {getLogo} from '@/data/static/layout';
 
 export default function Logo() {
   const pathname = usePathname();

@@ -25,8 +25,8 @@ export const metadata = {
 };
 
 // ui
-import Header from '../ui/layout/header';
-import Footer from '../ui/layout/footer';
+import Header from '@/ui/layout/header';
+import Footer from '@/ui/layout/footer';
 
 export default function RootLayout({ children }) {
   return (

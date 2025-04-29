@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // ui
-import Heading from '../patterns/heading';
+import Heading from '@/ui/patterns/heading';
 
 export default function Header({heroData}) {
   return (

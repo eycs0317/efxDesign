@@ -31,7 +31,4 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     return null;
   }
 })],
-  pages:{
-    signIn:'/login'
-  }
 })

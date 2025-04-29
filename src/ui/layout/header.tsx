@@ -1,7 +1,7 @@
 // ui
-import GoogleSignIn from '../../components/GoogleSignIn';
-import Logo from './logo';
-import Navigation from './navigation';
+import GoogleSignIn from '@/components/GoogleSignIn';
+import Logo from '@/ui/layout/logo';
+import Navigation from '@/ui/layout/navigation';
 
 export default function Header() {
   return (
