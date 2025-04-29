@@ -5,11 +5,11 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 // ui
-import ContainerGroup from '../ui/patterns/containerGroup';
-import Hero from '../ui/layout/hero';
+import ContainerGroup from '@/ui/patterns/containerGroup';
+import Hero from '@/ui/layout/hero';
 
 // data
-import {getHeroData, getServicesData, getPitchData, getPhilosophyData} from '../data/static/home';
+import {getHeroData, getServicesData, getPitchData, getPhilosophyData} from '@/data/static/home';
 
 export default function MainPage() {
   const heroData = getHeroData();

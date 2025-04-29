@@ -1,10 +1,7 @@
-
-
 // metadata
 export const metadata = {
   title: 'About us',
-}
-import UserAvatar from '../actions/textSession';
+};
 
 // styles
 import styles from './page.module.css';
@@ -13,11 +10,11 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 // ui
-import ContainerGroup from '../../ui/patterns/containerGroup';
-import Hero from '../../ui/layout/hero';
+import ContainerGroup from '@/ui/patterns/containerGroup';
+import Hero from '@/ui/layout/hero';
 
 // data
-import {getHeroData, getAboutData, getWhatWeDoData, getPhilosophyData, getHowWeWorkData, getWhoWeWorkWithData, getCTAData} from '../../data/static/about';
+import {getHeroData, getAboutData, getWhatWeDoData, getPhilosophyData, getHowWeWorkData, getWhoWeWorkWithData, getCTAData} from '@/data/static/about';
 
 export default function MainPage() {
   const heroData = getHeroData();

@@ -1,7 +1,7 @@
 // metadata
 export const metadata = {
   title: 'Our services',
-}
+};
 
 // styles
 import styles from './page.module.css';
@@ -10,13 +10,13 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 // ui
-import ContainerGroup from '../../ui/patterns/containerGroup';
-import Hero from '../../ui/layout/hero';
+import ContainerGroup from '@/ui/patterns/containerGroup';
+import Hero from '@/ui/layout/hero';
 
 // data
-import {getHeroData, getWebDesignData, getUXDesignData, getECommerceData, getBrandData, getDesignSystemsData} from '../../data/static/services';
+import {getHeroData, getWebDesignData, getUXDesignData, getECommerceData, getBrandData, getDesignSystemsData} from '@/data/static/services';
 
-export default function MainPage() {
+export default async function MainPage() {
   const heroData = getHeroData();
   const webDesignData = getWebDesignData();
   const uxDesignData = getUXDesignData();

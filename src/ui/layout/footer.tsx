@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // data
-import {getCopyright} from '../../data/static/layout';
+import {getCopyright} from '@/data/static/layout';
 
 export default function Footer() {
   const footer = getCopyright();

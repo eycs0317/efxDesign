@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 // ui
-import Heading from '../patterns/heading';
-import Container from './container';
+import Heading from '@/ui/patterns/heading';
+import Container from '@/ui/patterns/container';
 
 export default function ContainerGroup({containerGroupData}) {
   const headingData = (containerGroupData.heading) ? containerGroupData.heading.data : null;
