@@ -108,7 +108,7 @@ a:visited { color:var(--color-link-light); text-decoration:none; };
 a:hover { color:var(--color-link-light-active); text-decoration:underline; };
 a:active { color:var(--color-link-light-active); text-decoration:underline; };
 
-.button, .button:link { background-color:var(--color-button-bg); border:1px solid var(--color-button-text); color:var(--color-button-text); padding:var(--padding-button-y) var(--padding-button-y); border-radius:var(--radius-md); text-decoration:none; }
+.button, .button:link { background-color:var(--color-button-bg); border:1px solid var(--color-button-text); color:var(--color-button-text); cursor:pointer; padding:var(--padding-button-y) var(--padding-button-y); border-radius:var(--radius-md); text-decoration:none; }
 .button:visited { background-color:var(--color-button-bg); border:1px solid var(--color-button-text); color:var(--color-button-text); padding:var(--padding-button-y) var(--padding-button-y); border-radius:var(--radius-md); text-decoration:none; }
 .button:hover { background-color:var(--color-button-bg-active); border:1px solid var(--color-button-text); color:var(--color-button-text-active); padding:var(--padding-button-y) var(--padding-button-y); border-radius:var(--radius-md); text-decoration:none; }
 .button:active { background-color:var(--color-button-bg-active); border:1px solid var(--color-button-text); color:var(--color-button-text-active); padding:var(--padding-button-y) var(--padding-button-y); border-radius:var(--radius-md); text-decoration:none; }

@@ -1,8 +1,8 @@
-// src/app/actions/auth-actions.ts
-"use server";
+'use server';
 
-import { signIn } from "../../../auth";
+// authjs
+import { signIn } from '../../../auth';
 
 export async function signInWithGoogle() {
-  await signIn("google", {redirectTo:'/'});
+  await signIn('google', {redirectTo:'/dashboard'});
 }
