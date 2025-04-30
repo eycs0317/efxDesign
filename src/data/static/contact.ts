@@ -19,7 +19,7 @@ export function getHeroData() {
       data: {
         href: '/',
         content: 'Get Started',
-        className: 'button',
+        className: 'button primary',
       },
     },
   };

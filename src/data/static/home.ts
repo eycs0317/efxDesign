@@ -19,7 +19,7 @@ export function getHeroData() {
       data: {
         href: '/',
         content: 'Get Started',
-        className: 'button',
+        className: 'button primary',
       },
     },
   };
@@ -152,7 +152,7 @@ export function getServicesData() {
       data: {
         href: '/services',
         content: 'Explore Services',
-        className: 'button primary inline-block',
+        className: 'button inline-block',
       },
     },
   };
@@ -248,7 +248,7 @@ export function getPhilosophyContent() {
         data: {
           href: '/about',
           content: 'About EFX Design',
-          className: 'button primary inline-block mt-8',
+          className: 'button inline-block mt-8',
         },
       },
     ],

@@ -31,4 +31,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     return null;
   }
 })],
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) { // User is available during sign-in
+        token.id = 'efx-uid-00001'
+      }
+      return token
+    },
+    session({ session, token }) {
+      session.user.id = token.id
+      return session
+    },
+  },
 })
