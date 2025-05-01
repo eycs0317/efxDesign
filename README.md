@@ -49,8 +49,10 @@ google - https://next-auth.js.org/providers/google
 
 ## DB info
 
-whenever the schema change please run - npx prisma db push
-
 prisma studio - npx prisma studio
 
 method - https://www.prisma.io/docs/orm/reference/prisma-client-reference#findmany
+
+Database model at prisma/schema.prisma after update make sure run `npx prisma db push`
+
+User method at lib/user

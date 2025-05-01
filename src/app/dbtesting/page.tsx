@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-console.log('Prisma Client Keys:', Object.keys(prisma));
+
 
 export default async function DbTesting() {
 
@@ -7,10 +7,10 @@ export default async function DbTesting() {
     console.log('User Data:', userData);
     return (
       <div>
-        {userData.map((user) => (
+        {userData.map((user, index) => (
           <div key={user.id}>
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
+            <h2>{index}{user.name}</h2>
+
           </div>
         ))}
 
