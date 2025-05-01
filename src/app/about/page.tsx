@@ -16,6 +16,7 @@ import Hero from '@/ui/layout/hero';
 // data
 import {getHeroData, getAboutData, getWhatWeDoData, getPhilosophyData, getHowWeWorkData, getWhoWeWorkWithData, getCTAData} from '@/data/static/about';
 
+
 export default function MainPage() {
   const heroData = getHeroData();
   const aboutData = getAboutData();

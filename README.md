@@ -46,3 +46,11 @@ Sign out Page - http://localhost:3000/api/auth/signout
 Github - https://next-auth.js.org/providers/github
 
 google - https://next-auth.js.org/providers/google
+
+## DB info
+
+whenever the schema change please run - npx prisma db push
+
+prisma studio - npx prisma studio
+
+method - https://www.prisma.io/docs/orm/reference/prisma-client-reference#findmany
