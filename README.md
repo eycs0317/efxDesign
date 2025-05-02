@@ -56,3 +56,8 @@ method - https://www.prisma.io/docs/orm/reference/prisma-client-reference#findma
 Database model at prisma/schema.prisma after update make sure run `npx prisma db push`
 
 User method at lib/user
+
+## Todo
+
+1.active link - usePathname
+https://youtu.be/aJjMeCUvZ0E?si=7qqtBldDK-2h79eS

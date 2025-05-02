@@ -1,18 +1,16 @@
+'use client';
 // react
 import {Fragment} from 'react';
 
 // nextjs
 import Link from 'next/link';
 import Image from 'next/image';
-import Signout from '../../components/signout-button'
 import {getGlobalNav} from '@/data/static/layout';
+import { usePathname } from 'next/navigation';
 
-// authjs
-import {auth} from '../../../auth';
-
-export default async function Navigation() {
+export default function Navigation({session}) {
   const globalNav = getGlobalNav();
-  const session = await auth();
+  const pathname = usePathname()
 
   return (
     <ul className="flex gap-x-2">
@@ -24,7 +22,7 @@ export default async function Navigation() {
             } else {
               return (
                 <li>
-                  <Link href={item.href} className="p-2">{item.name}</Link>
+                  <Link href={item.href} className={`p-2 ${pathname === item.href ? 'font-bold' : ''}`}>{item.name}</Link>
                 </li>
               )
             }
