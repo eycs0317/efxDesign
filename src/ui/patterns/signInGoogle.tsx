@@ -1,5 +1,5 @@
 // authjs
-import { signInWithGoogle } from '@/app/actions/auth-actions';
+import { signInWithGoogle } from '@/ui/patterns/signInAction';
 import { signIn } from '../../../auth';
 
 // nextjs

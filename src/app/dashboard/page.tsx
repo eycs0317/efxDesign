@@ -9,15 +9,16 @@ import styles from './page.module.css';
 // nextjs
 import Image from 'next/image';
 
+// authjs
+import {auth} from '../../../auth';
+
 // ui
 import ContainerGroup from '@/ui/patterns/containerGroup';
 import Hero from '@/ui/layout/hero';
+import DbTesting from '@/ui/patterns/dbTest';
 
 // data
 import {getHeroData} from '@/data/static/dashboard';
-
-import {auth} from '../../../auth';
-// import UserAvatar from '../actions/textSession';
 
 export default async function MainPage() {
   const heroData = getHeroData();
@@ -33,6 +34,9 @@ export default async function MainPage() {
         <p>{session.user.email}</p>
         <p><Image src={session.user.image} width="50" height="50" alt={session.user.name} className="avatar" /></p>
         <p>{session.user.id}</p>
+      </div>
+      <div className="grid justify-items-center">
+        <DbTesting />
       </div>
     </main>
   );
