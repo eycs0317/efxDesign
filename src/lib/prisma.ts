@@ -1,5 +1,5 @@
 // import { PrismaClient } from "@prisma/client"; // not working
-import { PrismaClient } from '../generated/prisma';
+import { PrismaClient } from '@/app/generated/prisma/client';
 
 // console.log('Prisma Client:', PrismaClient)
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
