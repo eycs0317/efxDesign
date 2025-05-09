@@ -10,6 +10,7 @@ export default function FormField({fieldData}) {
         switch (fieldData.type) {
           case 'submit':
           case 'checkbox':
+          case 'hidden':
             return null;
           default:
             return <label htmlFor={fieldData.id}>{fieldData.label}:</label>;
@@ -20,9 +21,11 @@ export default function FormField({fieldData}) {
           case 'text':
           case 'email':
           case 'password':
-            return <input type={fieldData.type} name={fieldData.id} id={fieldData.id} className={fieldClassName} />;
+            return <input type={fieldData.type} name={fieldData.id} id={fieldData.id} className={fieldClassName} defaultValue={fieldValue} />;
+          case 'hidden':
+            return <input type={fieldData.type} name={fieldData.id} id={fieldData.id} defaultValue={fieldValue} />;
           case 'checkbox':
-            return <input type={fieldData.type} name={fieldData.id} id={fieldData.id} className={fieldClassName} value={fieldValue} defaultChecked={fieldIsChecked} />;
+            return <input type={fieldData.type} name={fieldData.id} id={fieldData.id} className={fieldClassName} defaultValue={fieldValue} defaultChecked={fieldIsChecked} />;
           case 'radio':
             return <input type={fieldData.type} name={fieldData.id} id={fieldData.id} className={fieldClassName} />;
           case 'submit':

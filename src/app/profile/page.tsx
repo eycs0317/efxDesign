@@ -7,6 +7,7 @@ export const metadata = {
 import styles from './page.module.css';
 
 // nextjs
+import {redirect} from 'next/navigation';
 import Image from 'next/image';
 
 // authjs
@@ -20,10 +21,10 @@ import Hero from '@/ui/layout/hero';
 import {getHeroData} from '@/data/static/profile';
 
 export default async function MainPage() {
-  const heroData = getHeroData();
+  let session = await auth();
+  if (!session?.auth) redirect('/signIn');
 
-  const session = await auth();
-  if (!session?.user) return null;
+  const heroData = getHeroData();
 
   return (
     <main role="main">
