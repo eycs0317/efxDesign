@@ -9,7 +9,7 @@ import Image from 'next/image';
 // data
 import {getLogo} from '@/data/static/layout';
 
-export default function Logo() {
+export default function Logo({session}) {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
@@ -26,7 +26,7 @@ export default function Logo() {
       {isHomePage ? (
         <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} priority={true} />
       ) : (
-        <Link href="/"><Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} priority={true} /></Link>
+        <Link href={session?.auth ? '/dashboard' : '/'}><Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} priority={true} /></Link>
       )}
     </>
   );

@@ -17,7 +17,7 @@ export default function Navigation({session}) {
       {globalNav.map((item) => (
         <Fragment key={item.name}>
           {(() => {
-            if ((session?.user && !item.signedIn) || (!session?.user && item.signedIn)) {
+            if ((session?.auth && !item.signedIn) || (!session?.auth && item.signedIn)) {
               return null;
             } else {
               return (

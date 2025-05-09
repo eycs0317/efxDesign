@@ -7,6 +7,7 @@ export const metadata = {
 import styles from './page.module.css';
 
 // nextjs
+import {redirect} from 'next/navigation';
 import Image from 'next/image';
 
 // authjs
@@ -21,10 +22,10 @@ import DbTesting from '@/ui/patterns/dbTest';
 import {getHeroData} from '@/data/static/dashboard';
 
 export default async function MainPage() {
+  let session = await auth();
+  if (!session?.auth) redirect('/signIn');
+  
   const heroData = getHeroData();
-
-  const session = await auth();
-  if (!session?.user) return null;
 
   return (
     <main role="main">
@@ -32,7 +33,7 @@ export default async function MainPage() {
       <div className="grid justify-items-center">
         <p>{session.user.name}</p>
         <p>{session.user.email}</p>
-        <p><Image src={session.user.image} width="50" height="50" alt={session.user.name} className="avatar" /></p>
+        {(!session.user.image)? null : <p><Image src={session.user.image} width="50" height="50" alt={session.user.name} className="avatar" /></p>}
         <p>{session.user.id}</p>
       </div>
       <div className="grid justify-items-center">

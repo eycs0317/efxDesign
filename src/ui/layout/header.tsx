@@ -1,12 +1,16 @@
 // ui
 import Logo from '@/ui/layout/logo';
-import ServerNav from './serverNav';
+import Navigation from './navigation';
 
-export default function Header() {
+// authjs
+import { auth } from '../../../auth';
+
+export default async function Header() {
+  const session = await auth()
   return (
     <header role="banner" className="bg-primary-1000 p-(--padding-container) flex justify-between items-center">
-        <Logo />
-        <ServerNav />
+        <Logo session={session} />
+        <Navigation session={session} />
     </header>
   );
 }
