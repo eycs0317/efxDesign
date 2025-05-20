@@ -21,17 +21,20 @@ import {getProfile} from '@/utils/authenticated';
 export default async function MainPage() {
   let session = await auth();
   if (!session?.auth) redirect('/signIn');
-
+  
   const profile = await getProfile(session);
+
+console.log(profile);
 
   return (
     <main role="main">
       <div className="grid justify-items-center">
         <ShippingAddress />
+
       </div>
-      {/*<div className="grid justify-items-center">
-        <DbTesting />
-      </div>*/}
+      <div className="grid justify-items-center">
+        {/*<DbTesting />*/}
+      </div>
     </main>
   );
 }
