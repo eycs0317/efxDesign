@@ -1,3 +1,8 @@
+// metadata
+export const metadata = {
+  title: 'Sign In',
+};
+
 // ui
 import SignInGoogle  from '@/ui/patterns/signInGoogle';
 import SignInEFX  from '@/ui/patterns/signInEFX';

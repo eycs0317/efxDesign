@@ -3,9 +3,6 @@ export const metadata = {
   title: 'Sign Out',
 };
 
-// styles
-import styles from './page.module.css';
-
 // ui
 import SignOut from '@/ui/patterns/signOut';
 

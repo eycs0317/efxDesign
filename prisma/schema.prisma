@@ -12,11 +12,127 @@ datasource db {
 }
 
 model User {
+  uid               String      @id @default(cuid())
+  email             String
+  password          String?
+  provider          String
+  isEFX             Boolean     @default(false)
+  isActive          Boolean     @default(true)
+  updatedAt         DateTime    @updatedAt
+  createdAt         DateTime    @default(now())
+  profile           Profile?
+  efxProfile        EFXProfile?
+  clientUserProject Project[]   @relation("clientUserProject")
+  efxUserProject    Project[]   @relation("efxUserProject")
+  clientUserPayment Payment[]   @relation("clientUserPayment")
+  efxUserPayment    Payment[]   @relation("efxUserPayment")
+
+  @@unique(fields: [email, provider])
   @@map("users")
-  uid         String      @id @default(cuid())
-  firstName   String?
-  lastName    String?
-  email       String?     @unique
-  updatedAt   DateTime    @updatedAt
-  createdAt   DateTime    @default(now())
+}
+
+model Profile {
+  uid           String   @id @unique
+  firstName     String?
+  lastName      String?
+  phoneUID      String?
+  addressUID    String?
+  avatar        String   @default("/assets/i/icons/avatar.png")
+  profileStatus Int      @default(0)
+  updatedAt     DateTime @updatedAt
+  createdAt     DateTime @default(now())
+  profileUser   User     @relation(fields: [uid], references: [uid])
+
+  @@map("profiles")
+}
+
+model EFXProfile {
+  uid            String         @id @unique
+  jobProfileUID  String?
+  dateStart      DateTime
+  dateEnd        DateTime?
+  systemRole     String         @default("User")
+  updatedAt      DateTime       @updatedAt
+  createdAt      DateTime       @default(now())
+  efxProfileUser User           @relation(fields: [uid], references: [uid])
+  efxJobProfiles EFXJobProfile? @relation(fields: [jobProfileUID], references: [uid])
+
+  @@map("efxProfiles")
+}
+
+model EFXJobProfile {
+  uid        String       @id @default(cuid())
+  family     String?
+  role       String?
+  updatedAt  DateTime     @updatedAt
+  createdAt  DateTime     @default(now())
+  EFXProfile EFXProfile[]
+
+  @@map("efxJobProfiles")
+}
+
+model Address {
+  uid       String   @id @default(cuid())
+  street1   String
+  street2   String?
+  city      String
+  region    String
+  postal    String
+  country   String   @default("United States")
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@map("addresses")
+}
+
+model Phone {
+  uid       String   @id @default(cuid())
+  phone     String
+  country   String   @default("United States")
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@map("phones")
+}
+
+model Project {
+  uid               String    @id @default(cuid())
+  clientUID         String
+  efxUID            String?
+  projectID         String?
+  title             String?
+  summary           String?
+  updatedAt         DateTime  @updatedAt
+  createdAt         DateTime  @default(now())
+  clientUserProject User      @relation("clientUserProject", fields: [clientUID], references: [uid])
+  efxUserProject    User?     @relation("efxUserProject", fields: [efxUID], references: [uid])
+  Payment           Payment[]
+
+  @@map("projects")
+}
+
+model Payment {
+  uid               String    @id @default(cuid())
+  clientUID         String
+  efxUID            String
+  projectUID        String
+  quoteID           String?
+  quoteDate         DateTime?
+  quoteExpireDate   DateTime?
+  invoiceID         String?
+  invoiceDate       DateTime?
+  invoiceDueDate    DateTime?
+  startDate         DateTime
+  endDate           DateTime
+  subtotal          Decimal   @default(0)
+  discount          Decimal   @default(0)
+  grandTotal        Decimal   @default(0)
+  isShown           Boolean   @default(false)
+  updatedAt         DateTime  @updatedAt
+  createdAt         DateTime  @default(now())
+  clientUserPayment User      @relation("clientUserPayment", fields: [clientUID], references: [uid])
+  efxUserPayment    User      @relation("efxUserPayment", fields: [efxUID], references: [uid])
+  projects          Project   @relation(fields: [projectUID], references: [uid])
+
+  @@map("payments")
 }

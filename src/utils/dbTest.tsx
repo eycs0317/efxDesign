@@ -8,14 +8,14 @@ export default async function DbTesting() {
     // console.log('User Data:', userData);
 
     // 2) find one
-    const userData = await prisma.user.findUnique({
-      where: { email: 'john@doe2.com' },
-      select: {
-        uid: true,
-        firstName: true,
-        lastName: true,
-      },
-    });
+    // const userData = await prisma.user.findUnique({
+    //   where: { email: 'john@doe2.com' },
+    //   select: {
+    //     uid: true,
+    //     firstName: true,
+    //     lastName: true,
+    //   },
+    // });
 
     // 3) create
     // const userData = await prisma.user.create({
@@ -36,8 +36,8 @@ export default async function DbTesting() {
 
     return (
       <div>
-        <h1>DB Testing</h1>
-        <p>Test the database connection and queries here.</p>
+        {/*<h1>DB Testing</h1>
+        <p>Test the database connection and queries here.</p>*/}
 
         {/*1)*/}
         {/*{userData.map((user, index) => (
@@ -47,7 +47,7 @@ export default async function DbTesting() {
         ))}*/}
 
         {/*2)*/}
-        <p>{userData.firstName} {userData.lastName}</p>
+        {/*<p>{userData.firstName} {userData.lastName}</p>*/}
 
         {/*{3)}*/}
         {/*{allUsers.map((user, index) => (
