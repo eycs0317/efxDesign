@@ -3,9 +3,6 @@ export const metadata = {
   title: 'Our services',
 };
 
-// styles
-import styles from './page.module.css';
-
 // nextjs
 import Image from 'next/image';
 

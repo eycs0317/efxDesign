@@ -3,35 +3,35 @@ export const metadata = {
   title: 'Profile',
 };
 
-// styles
-import styles from './page.module.css';
-
 // nextjs
 import {redirect} from 'next/navigation';
 import Image from 'next/image';
 
 // authjs
-import {auth} from '../../../auth';
+import {auth} from '../../../../auth';
 
 // ui
 import ContainerGroup from '@/ui/patterns/containerGroup';
-import Hero from '@/ui/layout/hero';
+import ShippingAddress  from '@/ui/patterns/address';
+// import DbTesting from '@/utils/dbTest';
 
-// data
-import {getHeroData} from '@/data/static/profile';
+// util
+import {getProfile} from '@/utils/authenticated';
 
 export default async function MainPage() {
   let session = await auth();
   if (!session?.auth) redirect('/signIn');
 
-  const heroData = getHeroData();
+  const profile = await getProfile(session);
 
   return (
     <main role="main">
-      <Hero heroData={heroData} />
       <div className="grid justify-items-center">
-        <p>{session.user.name}</p>
+        <ShippingAddress />
       </div>
+      {/*<div className="grid justify-items-center">
+        <DbTesting />
+      </div>*/}
     </main>
   );
 }
