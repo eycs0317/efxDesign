@@ -33,12 +33,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             },
           },
           select: {
+            uid: true,
             email: true,
             password: true,
+            isEFX: true,
+            isActive: true,
           },
         });
         if (userFind) {
-          if (userFind.password === password) {
+          if (userFind.password === password && userFind.isActive) {
             return userFind;
           } else {
             const userIncorrect = {email: 'notFound'}
@@ -66,40 +69,54 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           token.auth = false;
           return token;
         }
-        const userData = await prisma.user.findUnique({
-          where: {
-            email_provider: {
-              email: user.email,
-              provider: account.provider,
-            },
-          },
-          select: {
-            uid: true,
-          },
-        });
-        if (!userData) {
-          const userCreate = await prisma.user.create({
-            data: {
-              email: user.email,
-              provider: account.provider,
-              profile: {
-                create: {
-                  avatar: user.image,
-                  firstName: user.name.split(' ')[0],
-                  lastName: user.name.split(' ')[1],
-                },
+        if (account.provider == 'credentials') {
+          token.uid = user.uid;
+          token.isEFX = user.isEFX;
+          token.isActive = user.isActive;
+        } else {
+          const userData = await prisma.user.findUnique({
+            where: {
+              email_provider: {
+                email: user.email,
+                provider: account.provider,
               },
             },
+            select: {
+              uid: true,
+              isEFX: true,
+              isActive: true,
+            },
           });
-          token.uid = userCreate.uid;
-        } else {
-          token.uid = userData.uid;
+          if (!userData) {
+            const userCreate = await prisma.user.create({
+              data: {
+                email: user.email,
+                provider: account.provider,
+                profile: {
+                  create: {
+                    avatar: user.image,
+                    firstName: user.name.split(' ')[0],
+                    lastName: user.name.split(' ')[1],
+                  },
+                },
+              },
+            });
+            token.uid = userCreate.uid;
+            token.isEFX = userCreate.isActive;
+            token.isActive = userCreate.isActive;
+          } else {
+            token.uid = userData.uid;
+            token.isEFX = userData.isActive;
+            token.isActive = userData.isActive;
+          }
         }
-        token.auth = true;
+        token.isEFX = token.isEFX;
+        token.auth = token.isActive;
       }
       return token;
     },
     session({ session, token }) {
+      session.isEFX = token.isEFX;
       session.auth = token.auth;
       session.uid = token.uid;
       return session;
