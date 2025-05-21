@@ -12,7 +12,7 @@ import {auth} from '../../../../auth';
 
 // ui
 import ContainerGroup from '@/ui/patterns/containerGroup';
-import ShippingAddress  from '@/ui/patterns/address';
+import Address  from '@/ui/patterns/address';
 // import DbTesting from '@/utils/dbTest';
 
 // util
@@ -29,7 +29,7 @@ console.log(profile);
   return (
     <main role="main">
       <div className="grid justify-items-center">
-        <ShippingAddress />
+        <Address />
 
       </div>
       <div className="grid justify-items-center">

@@ -1,14 +1,16 @@
 // authjs
-import { signInWithGoogle } from '@/ui/patterns/signInAction';
 import { signIn } from '../../../auth';
 
-// nextjs
-import Image from 'next/image';
+// ui
+import FormField from '@/ui/foundations/formField';
 
 export default function signInGoogle() {
   return (
-    <form autoComplete="off" action={signInWithGoogle}>
-      <button className="button tertiary flex justify-between w-full" type="submit">Sign in with Google <Image src="/assets/i/icons/google.svg" width="24" height="24" alt="Google Logo" /></button>
+    <form autoComplete="off" action={async (formData) => {
+      'use server'
+      await signIn('google', {redirectTo:'/dashboard'});
+    }}>
+      <FormField type='button' fieldData={{type: 'submit', id: 'btGoogleSignIn', className: 'button tertiary flex justify-between w-full', value: 'Sign in with Google', image: {width: 24, height: 24, alt: 'Google Logo', src: '/assets/i/icons/google.svg'}}} />
     </form>
   );
 }
