@@ -32,16 +32,18 @@ model User {
 }
 
 model Profile {
-  uid           String   @id @unique
-  firstName     String?
-  lastName      String?
-  phoneUID      String?
-  addressUID    String?
-  avatar        String   @default("/assets/i/icons/avatar.png")
-  profileStatus Int      @default(0)
-  updatedAt     DateTime @updatedAt
-  createdAt     DateTime @default(now())
-  profileUser   User     @relation(fields: [uid], references: [uid])
+  uid            String   @id @unique
+  firstName      String?
+  lastName       String?
+  phoneUID       String?
+  addressUID     String?
+  avatar         String   @default("/assets/i/icons/avatar.png")
+  profileStatus  Int      @default(0)
+  updatedAt      DateTime @updatedAt
+  createdAt      DateTime @default(now())
+  profileUser    User     @relation(fields: [uid], references: [uid])
+  profileAddress Address? @relation(fields: [addressUID], references: [uid])
+  profilePhone   Phone?   @relation(fields: [phoneUID], references: [uid])
 
   @@map("profiles")
 }
@@ -72,25 +74,27 @@ model EFXJobProfile {
 }
 
 model Address {
-  uid       String   @id @default(cuid())
+  uid       String    @id @default(cuid())
   street1   String
   street2   String?
   city      String
   region    String
   postal    String
-  country   String   @default("United States")
-  updatedAt DateTime @updatedAt
-  createdAt DateTime @default(now())
+  country   String    @default("United States")
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  Profile   Profile[]
 
   @@map("addresses")
 }
 
 model Phone {
-  uid       String   @id @default(cuid())
+  uid       String    @id @default(cuid())
   phone     String
-  country   String   @default("United States")
-  updatedAt DateTime @updatedAt
-  createdAt DateTime @default(now())
+  country   String    @default("United States")
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  Profile   Profile[]
 
   @@map("phones")
 }
@@ -135,4 +139,15 @@ model Payment {
   projects          Project   @relation(fields: [projectUID], references: [uid])
 
   @@map("payments")
+}
+
+model Status {
+  uid       String   @id @default(cuid())
+  typeUID   String
+  type      String
+  status    String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@map("statuses")
 }

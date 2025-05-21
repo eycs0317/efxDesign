@@ -4,6 +4,9 @@ import {redirect} from 'next/navigation';
 // authjs
 import {auth, signOut} from '../../../auth';
 
+// ui
+import FormField from '@/ui/foundations/formField';
+
 export default async function SignOut() {
   let session = await auth();
   if (!session?.auth) redirect('/signIn');
@@ -19,7 +22,7 @@ export default async function SignOut() {
         }}
       >
         <p className="mb-4">Are you sure you want to sign out?</p>
-        <button type="submit" className="button primary w-fit">Continue to Sign Out</button>
+        <FormField type='button' fieldData={{type: 'submit', id: 'btSignOut', className: 'button primary', value: 'Continue to Sign Out'}} />
       </form>
     </section>
   )
