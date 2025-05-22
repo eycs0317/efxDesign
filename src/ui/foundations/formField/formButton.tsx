@@ -1,24 +1,31 @@
 /*
-  Required - type, id, value
-  Optional - wrapperClassName, className
-
-  Type - submit, button
+  USAGE:
+  ===========
+  <FormField type='button' fieldData={{
+    type: 'submit',                       @required | @options: 'submit' | 'button'
+    id: 'btSubmit',                       @required
+    value: 'Submit'                       @required
+    className: 'button primary',          @optional | @default: 'button'
+    image: {                              @optional
+      width: 24,                          @required
+      height: 24,                         @required
+      alt: 'Google Logo',                 @required
+      src: '/assets/i/icons/google.svg'   @required
+    }
+  }} />
 */
 
 // nextjs
 import Image from 'next/image';
 
 export default function FormButton({fieldData}) {
-  const defaultWrapperClassName = 'flex flex-col mt-4';
-  const defaultClassName = 'border p-2 mb-2';
+  const defaultClassName = 'button';
 
   return (
-    <div className={'formField formButton' + ((fieldData.wrapperClassName) ? ' ' + fieldData.wrapperClassName : ' ' + defaultWrapperClassName)}>
-      <button type={fieldData.type} name={fieldData.id} id={fieldData.id} className={(fieldData.className) ? fieldData.className : defaultClassName}>{fieldData.value}
-        {(() => {
-          return (fieldData.image) ? <Image src={fieldData.image.src} alt={fieldData.image.alt} width={fieldData.image.width} height={fieldData.image.height} priority={true} /> : null;
-        })()}
-      </button>
-    </div>
+    <button type={fieldData.type} name={fieldData.id} id={fieldData.id} className={defaultClassName + ((fieldData.className) ? ' ' + fieldData.className : '')}>{fieldData.value}
+      {(() => {
+        return (fieldData.image) ? <Image src={fieldData.image.src} alt={fieldData.image.alt} width={fieldData.image.width} height={fieldData.image.height} priority={true} /> : null;
+      })()}
+    </button>
   );
 }

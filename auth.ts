@@ -42,6 +42,63 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         });
         if (userFind) {
           if (userFind.password === password && userFind.isActive) {
+
+// const states = await prisma.state.createMany({
+//   data: [
+//     { state: 'Alabama', stateAbbr: 'AL' },
+//     { state: 'Alaska', stateAbbr: 'AK' },
+//     { state: 'Arizona', stateAbbr: 'AZ' },
+//     { state: 'Arkansas', stateAbbr: 'AR' },
+//     { state: 'California', stateAbbr: 'CA' },
+//     { state: 'Colorado', stateAbbr: 'CO' },
+//     { state: 'Connecticut', stateAbbr: 'CT' },
+//     { state: 'Delaware', stateAbbr: 'DE' },
+//     { state: 'Florida', stateAbbr: 'FL' },
+//     { state: 'Georgia', stateAbbr: 'GA' },
+//     { state: 'Hawaii', stateAbbr: 'HI' },
+//     { state: 'Idaho', stateAbbr: 'ID' },
+//     { state: 'Illinois', stateAbbr: 'IL' },
+//     { state: 'Indiana', stateAbbr: 'IN' },
+//     { state: 'Iowa', stateAbbr: 'IA' },
+//     { state: 'Kansas', stateAbbr: 'KS' },
+//     { state: 'Kentucky', stateAbbr: 'KY' },
+//     { state: 'Louisiana', stateAbbr: 'LA' },
+//     { state: 'Maine', stateAbbr: 'ME' },
+//     { state: 'Maryland', stateAbbr: 'MD' },
+//     { state: 'Massachusetts', stateAbbr: 'MA' },
+//     { state: 'Michigan', stateAbbr: 'MI' },
+//     { state: 'Minnesota', stateAbbr: 'MN' },
+//     { state: 'Mississippi', stateAbbr: 'MS' },
+//     { state: 'Missouri', stateAbbr: 'MO' },
+//     { state: 'Montana', stateAbbr: 'MT' },
+//     { state: 'Nebraska', stateAbbr: 'NE' },
+//     { state: 'Nevada', stateAbbr: 'NV' },
+//     { state: 'New Hampshire', stateAbbr: 'NH' },
+//     { state: 'New Jersey', stateAbbr: 'NJ' },
+//     { state: 'New Mexico', stateAbbr: 'NM' },
+//     { state: 'New York', stateAbbr: 'NY' },
+//     { state: 'North Carolina', stateAbbr: 'NC' },
+//     { state: 'North Dakota', stateAbbr: 'ND' },
+//     { state: 'Ohio', stateAbbr: 'OH' },
+//     { state: 'Oklahoma', stateAbbr: 'OK' },
+//     { state: 'Oregon', stateAbbr: 'OR' },
+//     { state: 'Pennsylvania', stateAbbr: 'PA' },
+//     { state: 'Rhode Island', stateAbbr: 'RI' },
+//     { state: 'South Carolina', stateAbbr: 'SC' },
+//     { state: 'South Dakota', stateAbbr: 'SD' },
+//     { state: 'Tennessee', stateAbbr: 'TN' },
+//     { state: 'Texas', stateAbbr: 'TX' },
+//     { state: 'Utah', stateAbbr: 'UT' },
+//     { state: 'Vermont', stateAbbr: 'VT' },
+//     { state: 'Virginia', stateAbbr: 'VA' },
+//     { state: 'Washington', stateAbbr: 'WA' },
+//     { state: 'West Virginia', stateAbbr: 'WV' },
+//     { state: 'Wisconsin', stateAbbr: 'WI' },
+//     { state: 'Wyoming', stateAbbr: 'WY' },
+//   ],
+// });
+
+
             return userFind;
           } else {
             const userIncorrect = {email: 'notFound'}

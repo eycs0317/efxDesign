@@ -80,8 +80,8 @@
 
   --color-button-bg-primary: var(--color-primary-900);
   --color-button-bg-primary-active: var(--color-primary-800);
-  --color-button-border-primary: var(--color-neutral-000);
-  --color-button-border-primary-active: var(--color-neutral-000);
+  --color-button-border-primary: var(--color-neutral-1000);
+  --color-button-border-primary-active: var(--color-neutral-1000);
   --color-button-text-primary: var(--color-neutral-000);
   --color-button-text-primary-active: var(--color-neutral-000);
 

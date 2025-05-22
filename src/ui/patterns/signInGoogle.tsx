@@ -6,7 +6,7 @@ import FormField from '@/ui/foundations/formField';
 
 export default function signInGoogle() {
   return (
-    <form autoComplete="off" action={async (formData) => {
+    <form className="flex flex-col" autoComplete="off" action={async (formData) => {
       'use server'
       await signIn('google', {redirectTo:'/dashboard'});
     }}>

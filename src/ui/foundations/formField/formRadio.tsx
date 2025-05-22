@@ -1,21 +1,44 @@
 /*
-  Required - groupLabel, groupName, radios[]{label, id, value}
-  Optional - groupClassName, isRequired, isError, helper, radios[]{wrapperClassName, className, isChecked}
+  USAGE:
+  ===========
+  <FormField type='radio' fieldData={{
+    groupLabel: 'Please select a color',        @required
+    groupName: 'colorName',                     @required
+    groupClassName: 'flex flex-row gap-6',      @optional | @default: 'flex flex-row gap-6'
+    isRequired: false,                          @optional | @options: true | false
+    isError: false,                             @optional | @default: true | false
+    helper: 'Select one option',                @optional
+    radios: [{                                  @required
+      label: 'Red',                             @required
+      value: 'value_red',                       @required
+      id: 'id_red',                             @required
+      wrapperClassName: 'flex flex-row',        @optional | @default: 'flex flex-row'
+      className: 'border mr-2',                 @optional | @default: 'border mr-2'
+      isChecked: true                           @optional | @default: true | false
+    }, {
+      label: 'Orange',                          @required
+      value: 'value_orange',                    @required
+      id: 'id_orange',                          @required
+      wrapperClassName: 'flex flex-row',        @optional | @default: 'flex flex-row'
+      className: 'border mr-2',                 @optional | @default: 'border mr-2'
+      isChecked: false                          @optional | @default: true | false
+    }]
+  }} />
 */
 
 export default function FormInput({fieldData}) {
-  const defaultGroupClassName = '';
-  const defaultWrapperClassName = 'flex items-center';
+  const defaultGroupClassName = 'flex flex-row gap-6';
+  const defaultWrapperClassName = 'flex flex-row';
   const defaultClassName = 'border mr-2';
   const radiosData = fieldData.radios;
 
   return (
-    <fieldset className={'formGroup formGroupRadio' + ((fieldData.groupClassName) ? ' ' + fieldData.groupClassName : ' ' + defaultGroupClassName) + ((fieldData.isRequired) ? ' formRequired' : '') + ((fieldData.isError) ? ' formError' : '')}>
-      <legend>{fieldData.groupLabel}</legend>
+    <fieldset className={defaultGroupClassName + ((fieldData.groupClassName) ? ' ' + fieldData.groupClassName : '') + ((fieldData.isRequired) ? ' formRequired' : '') + ((fieldData.isError) ? ' formError' : '')}>
+      <legend className="w-full">{fieldData.groupLabel}</legend>
       {radiosData.map((radioData) => (
-        <div key={radioData.id} className={'formField formRadio' + ((radioData.wrapperClassName) ? ' ' + radioData.wrapperClassName : ' ' + defaultWrapperClassName)}>
-          <input type="radio" name={fieldData.groupName} id={radioData.id} className={(radioData.className) ? radioData.className : defaultClassName} defaultValue={radioData.value} defaultChecked={(radioData.isChecked) ? radioData.isChecked : false} />
-          <label htmlFor={radioData.id}>{radioData.label}:</label>
+        <div key={radioData.id} className={defaultWrapperClassName + ((radioData.wrapperClassName) ? ' ' + radioData.wrapperClassName : '')}>
+          <input type="radio" name={fieldData.groupName} id={radioData.id} className={defaultClassName + ((radioData.className) ? ' ' + radioData.className : '')} defaultValue={radioData.value} defaultChecked={(radioData.isChecked) ? radioData.isChecked : false} />
+          <label htmlFor={radioData.id} className="block w-full">{radioData.label}</label>
         </div>
       ))}
       {(() => {
