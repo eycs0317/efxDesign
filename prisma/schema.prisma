@@ -151,3 +151,13 @@ model Status {
 
   @@map("statuses")
 }
+
+model State {
+  uid       String   @id @default(cuid())
+  stateAbbr String
+  state     String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@map("states")
+}

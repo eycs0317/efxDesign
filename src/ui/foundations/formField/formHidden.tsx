@@ -1,6 +1,10 @@
 /*
-  Required - id
-  Optional - value
+  USAGE:
+  ===========
+  <FormField type='hidden' fieldData={{
+    id: 'redirectTo',                     @required
+    value: '/dashboard'                   @optional
+  }} />
 */
 
 export default function FormHidden({fieldData}) {

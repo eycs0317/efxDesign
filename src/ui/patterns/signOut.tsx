@@ -12,8 +12,8 @@ export default async function SignOut() {
   if (!session?.auth) redirect('/signIn');
 
   return (
-    <section className="py-60 px-4 w-sm">
-      <form className="flex flex-col items-center"
+    <section className="">
+      <form className="flex flex-col items-center py-60 w-sm"
         action={async () => {
           'use server'
           await signOut({
@@ -21,8 +21,10 @@ export default async function SignOut() {
           });
         }}
       >
-        <p className="mb-4">Are you sure you want to sign out?</p>
-        <FormField type='button' fieldData={{type: 'submit', id: 'btSignOut', className: 'button primary', value: 'Continue to Sign Out'}} />
+        <div className="flex flex-col gap-4">
+          <p>Are you sure you want to sign out?</p>
+          <FormField type='button' fieldData={{type: 'submit', id: 'btSignOut', className: 'button primary', value: 'Continue to Sign Out'}} />
+        </div>
       </form>
     </section>
   )
